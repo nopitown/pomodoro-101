@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Timer from "../Timer";
 import Controls from "../Controls";
-import useTimerControls from "./useTimerControls";
+import useTimerControls from "../..hooks/useTimerControls";
 
 const ONE_SECOND = 1000; // milliseconds
 const ONE_MINUTE = 60 * ONE_SECOND;
