@@ -10,7 +10,7 @@ const DEFAULT_LENGTH = ONE_MINUTE * 25;
 
 function App() {
   const [currentTime, setCurrentTime] = useState(DEFAULT_LENGTH);
-  const { status, send } = useTimerControls();
+  const { status, play, pause, reset } = useTimerControls();
 
   useEffect(() => {
     if (status === "started") {
@@ -31,12 +31,7 @@ function App() {
     <main className="App">
       <h1>Pomodoro Timer</h1>
       <Timer currentTime={currentTime} />
-      <Controls
-        onPlay={() => send("START")}
-        onPause={() => send("PAUSE")}
-        onReset={() => send("RESET")}
-        status={status}
-      />
+      <Controls onPlay={play} onPause={pause} onReset={reset} status={status} />
     </main>
   );
 }

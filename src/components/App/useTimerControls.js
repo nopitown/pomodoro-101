@@ -22,9 +22,15 @@ const stateTimerMachine = Machine({
 const useTimerControls = () => {
   const [state, send] = useMachine(stateTimerMachine);
 
+  const play = () => send("START");
+  const pause = () => send("PAUSE");
+  const reset = () => send("RESET");
+
   return {
-    send,
-    status: state.value
+    status: state.value,
+    play,
+    pause,
+    reset
   };
 };
 
