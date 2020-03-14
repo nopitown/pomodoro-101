@@ -28,11 +28,18 @@ function App() {
   }, [currentTime, status]);
 
   return (
-    <main className="App">
-      <h1>Pomodoro Timer</h1>
-      <Timer currentTime={currentTime} />
-      <Controls onPlay={play} onPause={pause} onReset={reset} status={status} />
-    </main>
+    <div className="flex flex-col items-center">
+      <main className="max-w-screen-sm">
+        <h1 className="text-3xl mb-1 text-center">Pomodoro Timer</h1>
+        <Timer currentTime={currentTime} />
+        <Controls
+          onPlay={play}
+          onPause={pause}
+          onReset={reset}
+          status={status}
+        />
+      </main>
+    </div>
   );
 }
 
