@@ -1,0 +1,17 @@
+.heading {
+  margin: 0;
+  text-align: center;
+}
+
+.timer {
+  text-align: center;
+  width: 12rem;
+  height: 12rem;
+  margin: 5rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: white;
+  font-size: 4rem;
+}

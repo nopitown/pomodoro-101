@@ -4,6 +4,8 @@ import Timer from "../Timer";
 import Controls from "../Controls";
 import useTimerControls from "../../hooks/useTimerControls";
 
+import styles from "./styles.module.css";
+
 const ONE_SECOND = 1000; // milliseconds
 const ONE_MINUTE = 60 * ONE_SECOND;
 const DEFAULT_LENGTH = ONE_MINUTE * 25;
@@ -28,11 +30,18 @@ function App() {
   }, [currentTime, status]);
 
   return (
-    <main className="App">
-      <h1>Pomodoro Timer</h1>
-      <Timer currentTime={currentTime} />
-      <Controls onPlay={play} onPause={pause} onReset={reset} status={status} />
-    </main>
+    <div className={styles.container}>
+      <h1 className={styles.heading}>Pomodoro Timer</h1>
+      <main>
+        <Timer currentTime={currentTime} />
+        <Controls
+          onPlay={play}
+          onPause={pause}
+          onReset={reset}
+          status={status}
+        />
+      </main>
+    </div>
   );
 }
 

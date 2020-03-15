@@ -1,11 +1,14 @@
 import React from "react";
 import { format } from "date-fns";
 
+import styles from "./styles.module.css";
+
 const Timer = ({ currentTime }) => {
   return (
     <div>
-      <h3>Session</h3>
-      <p>{format(currentTime, "mm:ss")}</p>
+      <p className={styles.timer}>
+        <span>{format(currentTime, "mm:ss")}</span>
+      </p>
     </div>
   );
 };

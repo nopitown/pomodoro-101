@@ -1,5 +1,15 @@
 import React from "react";
 
+import styles from "./styles.module.css";
+
+const ControlButton = ({ className, onClick, children }) => {
+  return (
+    <button className={styles.controlButton} onClick={onClick}>
+      {children}
+    </button>
+  );
+};
+
 const Controls = ({ onPlay, onPause, onReset, status }) => {
   const handleClickPlayOrPause = () => {
     if (status === "idle" || status === "paused") {
@@ -10,11 +20,11 @@ const Controls = ({ onPlay, onPause, onReset, status }) => {
   };
 
   return (
-    <div>
-      <button onClick={handleClickPlayOrPause}>
+    <div className={styles.controls}>
+      <ControlButton onClick={handleClickPlayOrPause}>
         {status === "idle" || status === "paused" ? "Play" : "Pause"}
-      </button>
-      <button onClick={onReset}>Reset</button>
+      </ControlButton>
+      <ControlButton onClick={onReset}>Reset</ControlButton>
     </div>
   );
 };
